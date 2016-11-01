@@ -28,7 +28,7 @@
   </ItemGroup>
   <Import Project="$(SolutionDir)..\Configurations\Project.Default.props" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{0D716D67-7339-4780-9764-F48808DB8DAE}</ProjectGuid>
+    <ProjectGuid>{4E1DA32A-27BE-4A55-AC8D-EA2B309818B0}</ProjectGuid>
     <RootNamespace>Parsing</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -39,8 +39,8 @@
   <ImportGroup Label="ExtensionSettings" />
   <ImportGroup Label="PropertySheets">
     <Import Project="$(ConfigurationsDir)Project2.Default.props" />
-    <Import Project="$(ConfigurationsDir)CRTWarnings.Disable.props" />
     <Import Project="$(ConfigurationsDir)PortableRuntime.props" />
+    <Import Project="$(ConfigurationsDir)Parsing.props" />
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
