@@ -50,6 +50,7 @@
   <ItemDefinitionGroup />
   <ItemGroup>
     <ClInclude Include="PreCompile.h" />
+    <ClCompile Include="CommandLine.cpp" />
     <ClCompile Include="PreCompile.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
