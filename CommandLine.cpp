@@ -1,4 +1,5 @@
 #include "PreCompile.h"
+#include "CommandLine.h"            // Pick up forward declarations to ensure correctness.
 #include <PortableRuntime/CheckException.h>
 
 namespace Parsing {
@@ -16,15 +17,6 @@ std::vector<std::string> args_from_argv(int argc, _In_reads_(argc) wchar_t** arg
     return args;
 }
 #endif
-
-struct Argument_descriptor
-{
-    unsigned int key;
-    const char* long_name;
-    char short_name;
-    bool requires_parameter;
-    const char* description;
-};
 
 static std::string argument_name_from_long_name(const std::string& long_name)
 {
@@ -120,7 +112,7 @@ std::unordered_map<unsigned int, std::string> options_from_allowed_args(const st
     return options;
 }
 
-std::string Options_help_text(const std::vector<Parsing::Argument_descriptor>& argument_map)
+std::string Options_help_text(const std::vector<Argument_descriptor>& argument_map)
 {
     std::string help_text;
 
