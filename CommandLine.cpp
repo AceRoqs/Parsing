@@ -24,6 +24,12 @@ static std::string argument_name_from_long_name(const std::string& long_name)
     return long_name.substr(2, std::string::npos);
 }
 
+static bool is_printable_character(char ch)
+{
+    // Characters between space and tilde (inclusive) are printable in UTF-8.
+    return ch >= 0x20 && ch <= 0x7e;
+}
+
 void validate_argument_map(const std::vector<Argument_descriptor>& argument_map)
 {
     const auto size = argument_map.size();
@@ -43,8 +49,9 @@ void validate_argument_map(const std::vector<Argument_descriptor>& argument_map)
     {
         if(argument_map[ix].short_name != 0)
         {
-            assert(!used[argument_map[ix].short_name]);
-            used[argument_map[ix].short_name] = true;
+            assert(is_printable_character(argument_map[ix].short_name));
+            assert(!used[static_cast<unsigned char>(argument_map[ix].short_name)]);
+            used[static_cast<unsigned char>(argument_map[ix].short_name)] = true;
         }
     }
 }
@@ -163,4 +170,3 @@ std::string Options_help_text(const std::vector<Argument_descriptor>& argument_m
 }
 
 }
-
