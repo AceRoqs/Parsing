@@ -24,7 +24,8 @@ static std::string argument_name_from_long_name(const std::string& long_name)
     return long_name.substr(2, std::string::npos);
 }
 
-static bool is_printable_character(char ch)
+// TODO: 2016: Make this static or put this in a library usable by other things.
+bool is_printable_character(char ch)
 {
     // Characters between space and tilde (inclusive) are printable in UTF-8.
     return ch >= 0x20 && ch <= 0x7e;
