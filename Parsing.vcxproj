@@ -52,6 +52,7 @@
     <ClInclude Include="CommandLine.h" />
     <ClInclude Include="PreCompile.h" />
     <ClCompile Include="CommandLine.cpp" />
+    <ClCompile Include="JSON.cpp" />
     <ClCompile Include="PreCompile.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
